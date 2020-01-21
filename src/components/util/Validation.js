@@ -23,6 +23,10 @@ function validateForm(event, state) {
       document.getElementById("confirmpassword").classList.add("is-danger");
       return { blankfield: true };
     }
+    if (state.hasOwnProperty("verificationcode") && state.confirmpassword === "") {
+      document.getElementById("verificationcode").classList.add("is-danger");
+      return { blankfield: true };
+    }
     if (
       state.hasOwnProperty("password") &&
       state.hasOwnProperty("confirmpassword") &&
